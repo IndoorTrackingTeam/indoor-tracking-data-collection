@@ -27,7 +27,7 @@ jobs:
   deploy:
     name: Deploy Broker
     runs-on: ubuntu-latest
-    environment: backend
+    environment: development
 
     steps:
     - name: Checkout
