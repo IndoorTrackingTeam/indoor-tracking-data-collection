@@ -14,7 +14,7 @@ on:
 
 env:
   IMAGE: broker
-  PORT: 8000
+  PORT: 1883
   REGION: us-east1
   CPU: 1
   MEMORY: 128Mi
