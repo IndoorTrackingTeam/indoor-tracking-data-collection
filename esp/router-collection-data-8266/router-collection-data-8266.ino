@@ -5,10 +5,9 @@
 const char* ssid = "PedroGuimaraes";
 const char* password = "ronk1234";
 const char* host = "run-api-dev-131050301176.us-east1.run.app";
-const char* url = "/router/training-data/create";
+const char* url = "/router/data/create";
 
-String esp_id = "325470";
-String room = "Room 1";
+String esp_id = "12345";
 
 void setup() {
   Serial.begin(115200);
@@ -23,7 +22,7 @@ void setup() {
   Serial.println("WiFi connected");
 }
 
-void sendDataToAPI(String esp_id, String room, int networks) {
+void sendDataToAPI(String esp_id, int networks) {
 
   WiFiClientSecure client;
   client.setInsecure();
@@ -34,7 +33,7 @@ void sendDataToAPI(String esp_id, String room, int networks) {
   }
 
   String payload = "{";
-  payload += "\"room\": \"" + room + "\",";
+  payload += "\"esp_id\": \"" + esp_id + "\",";
   payload += "\"networks\": [";
 
   for (int i = 0; i < networks; ++i) {
@@ -42,7 +41,7 @@ void sendDataToAPI(String esp_id, String room, int networks) {
     String ssid = WiFi.SSID(i);
     int rssi = WiFi.RSSI(i);  
 
-    payload += "{\"mac\": \"" + mac + "\", \"name_router\": \"" + ssid + "\", \"esp_id\": \"" + esp_id + "\", \"rssi\": " + String(rssi) + "}";
+    payload += "{\"mac\": \"" + mac + "\", \"name_router\": \"" + ssid +  "\", \"rssi\": " + String(rssi) + "}";
 
     if (i < networks - 1) {
       payload += ",";
@@ -73,7 +72,7 @@ void loop() {
 
   int networks = WiFi.scanNetworks();
   if (networks > 0) {
-    sendDataToAPI(esp_id, room, networks);
+    sendDataToAPI(esp_id, networks);
   }
 
   delay(5000);
