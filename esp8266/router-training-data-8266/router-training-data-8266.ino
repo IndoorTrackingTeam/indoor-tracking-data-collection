@@ -1,6 +1,5 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>
-#include <WiFiUdp.h>
 
 const char* ssid = "PedroGuimaraes";
 const char* password = "ronk1234";
