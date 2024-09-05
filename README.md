@@ -6,11 +6,6 @@
   <a>
     <img alt="Static Badge" src="https://img.shields.io/badge/IT-Indoor%20Tracking-F1B600?&logoColor=white&link=https%3A%2F%2Fgithub.com%2FIndoorTrackingTeam">
   </a>
-  <a href="https://github.com/IndoorTrackingTeam/indoor-tracking-backend/actions/workflows/ci-cd-api-deploy-dev.yaml">
-    <img src="https://github.com/IndoorTrackingTeam/indoor-tracking-backend/actions/workflows/ci-cd-api-deploy-dev.yaml/badge.svg?branch=development" alt="Deploy API DEV">
-  </a>
-  <a href="https://github.com/IndoorTrackingTeam/indoor-tracking-backend/actions/workflows/ci-cd-api-deploy-prod.yaml">
-    <img src="https://github.com/IndoorTrackingTeam/indoor-tracking-backend/actions/workflows/ci-cd-api-deploy-prod.yaml/badge.svg" alt="Deploy API DEV">
   </a>
 </p>
 
